@@ -1,0 +1,48 @@
+prompt inicial:
+
+hey, i want to analyze the influence of macro economic variables (e.g. tax rate, currency, GDP, inflation...) in the number of companies filing for bankruptcy. i will use python and ML algorithms for this. i have this csv file here:
+
+"y1","y2","x1","x2","x3","x4","x5","x6","x7","x8"
+"345.75","1383","2.1285","2.25","16.5","104","1274386.404","1855.23532","40.363","101.64974653344"
+"367","1468","2.1773","2.13","15.75","98.3","1306743.975","1953.119144","36.53","101.75139627998"
+"370","1480","2.2475","2.05","15.25","98.6","1322129.019","1917.121077","36.631","101.53771834779"
+"344.25","1377","2.1885","2.00","15.25","101.3","1334617.378","2000.358987","37.077","101.73064001265"
+
+here what the variables mean:
+
+y1	falências requeridas (média móvel 4 meses)
+y2	falências requeridas (soma)
+x1	taxa de câmbio
+x2	taxa de capital de giro PJ
+x3	taxa de juros
+x4	ICE (expectativas)
+x5	M1 (liquidez)
+x6	PIB real
+x7	IBOVESPA
+x8	IPCA (inflação)
+
+the first line is dated in april/2006 and the last one is from december/2022. i want to divide this data in two periods: 1. the learning period (april/2006 to december/2018) and 2. the test period (january/2019 to december/2022).
+
+i need the variables to be normalized (with scaler).
+
+the methodologies i want to use are bagging, random forest and xgboost
+
+i already have this code that is extracting the csv data and putting it into an array:
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import csv;
+
+caminho_para_arquivo = './base.csv';
+
+valores = []
+
+with open(caminho_para_arquivo, 'r') as arquivo_cru:
+    arquivo_lido = csv.reader(arquivo_cru)
+    
+    for linha in arquivo_lido:
+        valores.append(linha);
+        
+
+give me some code to solve this, please...
