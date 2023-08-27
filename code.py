@@ -14,11 +14,13 @@ warnings.filterwarnings("ignore")  # Suppress ARIMA warnings
 
 
 # Load data from CSV
-caminho_para_arquivo = './base.csv'
+base = './base.csv'
+defasado_com_cgpj = './CGP.csv'
+defasado_com_juros = './TXJ.csv'
 
 valores = []
 
-with open(caminho_para_arquivo, 'r') as arquivo_cru:
+with open(defasado_com_cgpj, 'r') as arquivo_cru:
     arquivo_lido = csv.reader(arquivo_cru)
     
     # Skip the header row
@@ -34,7 +36,7 @@ X = valores[:, 2:]
 y = valores[:, 0]
 
 # Split data into learning and test periods
-learning_end_index = 153 # Index for December 2018
+learning_end_index = 153 + 12 + 12 # Index for December 2020 (TODO: conversar com prof sobre ponto de corte)
 X_learn, X_test = X[:learning_end_index], X[learning_end_index:]
 y_learn, y_test = y[:learning_end_index], y[learning_end_index:]
 
