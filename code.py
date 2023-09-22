@@ -75,7 +75,7 @@ average_feature_importances = np.mean(feature_importances, axis=0)
 
 if (logar_feature_importance):
     for valor in average_feature_importances:
-        print(f"{valor}")
+        print(f"{valor}".replace(".", ","))
 
 if (logar_previsoes):
     for valor in y_pred_bagging:
@@ -96,7 +96,7 @@ mse_rf = mean_squared_error(y_test, y_pred_rf)
 
 if (logar_feature_importance):
     for valor in random_forest_regressor.feature_importances_:
-        print(f"{valor}")
+        print(f"{valor}".replace(".", ","))
 
 if (logar_previsoes):
     for valor in y_pred_rf:
@@ -116,7 +116,7 @@ mse_xgb = mean_squared_error(y_test, y_pred_xgb)
 
 if (logar_feature_importance):
     for valor in xgb_regressor.feature_importances_:
-        print(f"{valor:.20f}")
+        print(f"{valor:.20f}".replace(".", ","))
 
 
 if (logar_previsoes):
