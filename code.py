@@ -21,6 +21,9 @@ defasado_com_juros = './txjAA.csv'
 feature_importance_cgpj = './feat_cgp.csv'
 feature_importance_juros = './feat_txj.csv'
 
+feature_importance_2_cgpj = './feat_2_maiores_cgp.csv'
+feature_importance_2_juros = './feat_2_maiores_txj.csv'
+
 logar_previsoes = False
 logar_feature_importance = False
 media_movel_4_meses = 0
@@ -28,7 +31,7 @@ soma_4_meses = 1
 
 valores = []
 
-with open(feature_importance_juros, 'r') as arquivo_cru:
+with open(feature_importance_2_cgpj, 'r') as arquivo_cru:
     arquivo_lido = csv.reader(arquivo_cru)  
 
     # Skip the header row
